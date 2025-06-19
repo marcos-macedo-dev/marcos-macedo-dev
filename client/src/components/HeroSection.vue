@@ -1,7 +1,7 @@
 <template>
   <section
     id="inicio"
-    class="relative isolate min-h-[100vh] flex items-center overflow-hidden"
+    class="relative isolate min-h-[100vh] flex items-center overflow-hidden py-24 px-6"
     aria-label="Seção inicial com apresentação de Antonio Marcos, Desenvolvedor Full Stack"
   >
     <!-- Glows decorativos roxinhos -->

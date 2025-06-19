@@ -45,4 +45,4 @@
 
 ---
 
-<p align="center"><strong>⭐ Obrigado por visitar meu perfil! Vamos aprender e evoluir juntos? 😄</strong></p>
+<p align="center"><strong>⭐ Obrigado por visitar meu perfil!</strong></p>

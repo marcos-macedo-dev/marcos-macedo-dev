@@ -1,6 +1,7 @@
 <script setup>
-import AlertToastComp from './components/AlertToastComp.vue';
-
+import AlertToastComp from './components/AlertToastComp.vue'
+// main.js ou no setup do App.vue
+document.documentElement.classList.add('dark')
 </script>
 
 <template>
@@ -8,6 +9,4 @@ import AlertToastComp from './components/AlertToastComp.vue';
   <RouterView />
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
