@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Nova mensagem de contato</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a2e;
+    color: #e0d7f5;
+    padding: 20px;
+  }
+  .container {
+    background: #2c2c54;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+  }
+  h2 {
+    color: #9b59b6;
+    border-bottom: 2px solid #9b59b6;
+    padding-bottom: 10px;
+  }
+  p {
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+  strong {
+    color: #d1b3ff;
+  }
+  .message {
+    background: #3a3a66;
+    padding: 15px;
+    border-radius: 8px;
+    white-space: pre-wrap;
+    font-family: 'Courier New', Courier, monospace;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h2>Nova mensagem de contato</h2>
+    <p><strong>Nome:</strong> {{name}}</p>
+    <p><strong>Email:</strong> {{email}}</p>
+    <p><strong>Mensagem:</strong></p>
+    <div class="message">{{message}}</div>
+  </div>
+</body>
+</html>
