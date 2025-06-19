@@ -9,7 +9,7 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          <IconsComp name="Instagram" class="h-6 w-6 text-purple-500" />
+          <IconsComp name="Instagram" class="h-6 w-6 text-blue-500" />
           <span class="text-lg font-semibold text-white">m4rcos_macedo</span>
         </a>
         <p class="text-sm text-gray-500 text-center md:text-left">
@@ -20,9 +20,9 @@
       <!-- Navegação -->
       <nav>
         <ul class="flex gap-6 flex-wrap justify-center">
-          <li><a href="#hero" class="hover:text-white transition">Início</a></li>
+          <li><a href="#inicio" class="hover:text-white transition">Início</a></li>
           <li><a href="#sobre" class="hover:text-white transition">Sobre</a></li>
-          <li><a href="#pacotes" class="hover:text-white transition">Pacotes</a></li>
+          <li><a href="#competencias" class="hover:text-white transition">Competências</a></li>
           <li><a href="#contato" class="hover:text-white transition">Contato</a></li>
         </ul>
       </nav>
@@ -41,7 +41,7 @@
 
     <!-- Linha separadora -->
     <div class="border-t border-zinc-800 mt-8 pt-4 text-center text-xs text-gray-600">
-      © 2025 Ararion. Todos os direitos reservados.
+      © 2025. Todos os direitos reservados.
     </div>
   </footer>
 </template>

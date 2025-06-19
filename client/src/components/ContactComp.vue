@@ -46,19 +46,19 @@ const handleSubmit = async () => {
   >
     <!-- Glows -->
     <div
-      class="absolute top-[-150px] left-[60%] w-[400px] h-[400px] rounded-full bg-purple-700/20 blur-[150px]"
+      class="absolute top-[-150px] left-[60%] w-[400px] h-[400px] rounded-full bg-blue-700/20 blur-[150px]"
     ></div>
     <div
-      class="absolute bottom-[-180px] left-[-120px] w-[500px] h-[500px] rounded-full bg-purple-600/25 blur-[160px]"
+      class="absolute bottom-[-180px] left-[-120px] w-[500px] h-[500px] rounded-full bg-blue-600/25 blur-[160px]"
     ></div>
     <div
-      class="absolute top-[50%] right-[-200px] w-[350px] h-[350px] rounded-full bg-purple-800/15 blur-[140px]"
+      class="absolute top-[50%] right-[-200px] w-[350px] h-[350px] rounded-full bg-blue-800/15 blur-[140px]"
     ></div>
 
     <div class="max-w-3xl mx-auto">
       <!-- Cabeçalho -->
       <div class="mb-12 text-center">
-        <h3 class="text-sm uppercase tracking-widest text-purple-500 mb-2">Contato</h3>
+        <h3 class="text-sm uppercase tracking-widest text-blue-500 mb-2">Contato</h3>
         <h2 class="text-4xl sm:text-5xl font-extrabold text-white mb-4 tracking-tight">
           Fale Comigo
         </h2>
@@ -80,7 +80,7 @@ const handleSubmit = async () => {
               name="name"
               placeholder="Seu nome"
               v-model="name"
-              class="w-full rounded-xl bg-zinc-900 border border-zinc-700 py-3 px-4 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-purple-600 transition"
+              class="w-full rounded-xl bg-zinc-900 border border-zinc-700 py-3 px-4 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition"
             />
           </div>
 
@@ -93,7 +93,7 @@ const handleSubmit = async () => {
               name="email"
               placeholder="seu@email.com"
               v-model="email"
-              class="w-full rounded-xl bg-zinc-900 border border-zinc-700 py-3 px-4 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-purple-600 transition"
+              class="w-full rounded-xl bg-zinc-900 border border-zinc-700 py-3 px-4 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition"
             />
           </div>
         </div>
@@ -107,7 +107,7 @@ const handleSubmit = async () => {
             rows="5"
             placeholder="Escreva sua mensagem aqui..."
             v-model="message"
-            class="w-full rounded-xl bg-zinc-900 border border-zinc-700 py-3 px-4 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-purple-600 transition resize-none"
+            class="w-full rounded-xl bg-zinc-900 border border-zinc-700 py-3 px-4 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition resize-none"
           ></textarea>
         </div>
 
@@ -116,7 +116,7 @@ const handleSubmit = async () => {
           <button
             type="submit"
             disabled
-            class="inline-flex items-center gap-2 rounded-xl bg-purple-600 px-8 py-3 text-sm sm:text-base font-semibold text-white shadow-md hover:bg-purple-700 hover:shadow-purple-500/40 focus:outline-none focus:ring-4 focus:ring-purple-500/50 transition disabled:opacity-50 disabled:cursor-not-allowed"
+            class="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-8 py-3 text-sm sm:text-base font-semibold text-white shadow-md hover:bg-blue-700 hover:shadow-blue-500/40 focus:outline-none focus:ring-4 focus:ring-blue-500/50 transition disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <IconsComp
               :name="isLoading ? 'Spinner' : 'Send'"
