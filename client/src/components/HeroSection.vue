@@ -28,7 +28,7 @@
           src="../assets/images/cup.png"
           alt=""
           aria-hidden="true"
-          class="absolute inset-0 w-[400px] sm:w-[500px] h-[400px] sm:h-[500px] opacity-40 blur-[10px] pointer-events-none select-none animate-floating"
+          class="absolute inset-0 w-[400px] sm:w-[500px] h-[400px] sm:h-[500px] opacity-40 blur-[2px] pointer-events-none select-none animate-floating"
           loading="lazy"
           decoding="async"
           fetchpriority="low"
