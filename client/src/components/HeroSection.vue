@@ -4,6 +4,8 @@
     class="relative isolate min-h-[100vh] flex items-center overflow-hidden py-16 px-4 sm:py-24 sm:px-6 lg:px-12"
     aria-label="Seção inicial com apresentação de Antonio Marcos, Desenvolvedor Full Stack"
   >
+    <div id="particles-js" class="absolute inset-0"></div>
+
     <!-- Glows decorativos azulados -->
     <div
       class="absolute left-[-200px] top-1/4 w-[400px] h-[400px] rounded-full bg-blue-600/30 blur-[140px] pointer-events-none select-none"
@@ -19,8 +21,6 @@
     <div
       class="z-10 w-full max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-16 px-4 sm:px-6"
     >
-      <div id="particles-js" class="absolute inset-0"></div>
-
       <!-- Texto e CTA -->
       <header class="flex-1 relative max-w-xl text-center lg:text-left">
         <!-- Imagem de fundo desfoque -->
