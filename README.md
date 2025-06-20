@@ -23,7 +23,7 @@
 
 > *Alguns dos meus projetos em destaque:*
 
-- 🔗 [**Portfólio Pessoal**](https://github.com/seuusuario/portfolio) – Criado com Vue.js e TailwindCSS, exibindo meus projetos e habilidades  
+- 🔗 [**Portfólio Pessoal**](https://marcos-macedo-dev.vercel.app/) – Criado com Vue.js e TailwindCSS, exibindo meus projetos e habilidades  
 
 *(Mais projetos em breve!)*
 
