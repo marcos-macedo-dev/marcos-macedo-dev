@@ -8,7 +8,7 @@
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
       <!-- Logo -->
       <div class="flex items-center">
-        <span class="font-bold text-2xl text-white">Portfólio</span>
+        <img src="/logotipo.png" alt="Logo do portfólio de Antonio Marcos" class="h-6 w-auto" />
       </div>
 
       <!-- Navegação desktop -->
