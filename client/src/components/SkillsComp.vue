@@ -1,19 +1,14 @@
 <template>
   <section id="competencias" class="relative isolate bg-zinc-950 py-24 px-6 overflow-hidden">
-    <!-- Glows decorativos com novas posições -->
+    <!-- Glows decorativos -->
     <div
-      class="absolute -top-40 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-blue-600/20 blur-[160px] pointer-events-none select-none"
-      aria-hidden="true"
+      class="absolute -top-40 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-blue-600/20 blur-[160px] pointer-events-none"
     ></div>
-
     <div
-      class="absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full bg-blue-700/15 blur-[140px] pointer-events-none select-none"
-      aria-hidden="true"
+      class="absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full bg-blue-700/15 blur-[140px] pointer-events-none"
     ></div>
-
     <div
-      class="absolute top-10 right-[-150px] w-[300px] h-[300px] rounded-full bg-blue-500/10 blur-[120px] pointer-events-none select-none"
-      aria-hidden="true"
+      class="absolute top-10 right-[-150px] w-[300px] h-[300px] rounded-full bg-blue-500/10 blur-[120px] pointer-events-none"
     ></div>
 
     <div class="z-10 max-w-7xl mx-auto w-full flex flex-col gap-10 sm:gap-12">
@@ -28,7 +23,7 @@
         </p>
       </header>
 
-      <!-- Skills e Ferramentas lado a lado -->
+      <!-- Skills e Ferramentas -->
       <div class="flex flex-col lg:flex-row gap-12 lg:gap-20">
         <!-- Skills -->
         <section
@@ -37,9 +32,12 @@
           <h3 class="text-3xl font-semibold text-white mb-8 text-center tracking-wide">Skills</h3>
           <ul class="grid grid-cols-2 sm:grid-cols-3 gap-6 text-blue-300 text-base font-medium">
             <li
-              v-for="skill in skills"
+              v-for="(skill, index) in skills"
               :key="skill.name"
-              class="flex items-center gap-4 p-3 rounded-md bg-zinc-800 hover:bg-blue-700/50 transition-colors duration-300 select-none cursor-default"
+              :class="[
+                'flex items-center gap-4 p-3 rounded-md bg-zinc-800 hover:bg-blue-700/50 transition-transform duration-300 select-none cursor-default',
+                index % 3 === 1 ? 'hover:-rotate-3' : 'hover:rotate-3',
+              ]"
               :title="skill.name"
             >
               <Icon
@@ -52,7 +50,7 @@
           </ul>
         </section>
 
-        <!-- Linha divisória -->
+        <!-- Divisória -->
         <div class="hidden lg:block w-px bg-blue-700/50 rounded mx-6" aria-hidden="true"></div>
 
         <!-- Ferramentas -->
@@ -64,9 +62,12 @@
           </h3>
           <ul class="grid grid-cols-2 sm:grid-cols-3 gap-6 text-blue-300 text-base font-medium">
             <li
-              v-for="tool in tools"
+              v-for="(tool, index) in tools"
               :key="tool.name"
-              class="flex items-center gap-4 p-3 rounded-md bg-zinc-800 hover:bg-blue-700/50 transition-colors duration-300 select-none cursor-default"
+              :class="[
+                'flex items-center gap-4 p-3 rounded-md bg-zinc-800 hover:bg-blue-700/50 transition-transform duration-300 select-none cursor-default',
+                index % 3 === 1 ? 'hover:-rotate-4' : 'hover:rotate-4',
+              ]"
               :title="tool.name"
             >
               <Icon
