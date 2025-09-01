@@ -6,12 +6,11 @@
   >
     <div id="particles-js" class="absolute inset-0"></div>
 
-    <!-- Glows decorativos azulados -->
+    <!-- Glows decorativos -->
     <div
       class="absolute left-[-200px] top-1/4 w-[400px] h-[400px] rounded-full bg-blue-600/30 blur-[140px] pointer-events-none select-none"
       aria-hidden="true"
     ></div>
-
     <div
       class="absolute right-[-160px] bottom-0 w-[360px] h-[360px] rounded-full bg-blue-700/20 blur-[140px] pointer-events-none select-none"
       aria-hidden="true"
@@ -23,7 +22,6 @@
     >
       <!-- Texto e CTA -->
       <header class="flex-1 relative max-w-xl text-center lg:text-left">
-        <!-- Imagem de fundo desfoque -->
         <img
           src="../assets/images/cup.png"
           alt=""
@@ -35,14 +33,14 @@
         />
 
         <h1
-          class="text-3xl sm:text-5xl lg:text-7xl font-extrabold text-white leading-tight relative tracking-tight"
+          class="title text-3xl sm:text-5xl lg:text-7xl font-extrabold text-white leading-tight relative tracking-tight"
         >
           Antonio Marcos<br />
           <span class="text-blue-300">Desenvolvedor Full Stack</span>
         </h1>
 
         <p
-          class="mt-6 text-base sm:text-lg lg:text-xl text-blue-200 max-w-xl mx-auto lg:mx-0 leading-relaxed relative"
+          class="subtitle mt-6 text-base sm:text-lg lg:text-xl text-blue-200 max-w-xl mx-auto lg:mx-0 leading-relaxed relative"
         >
           Eu transformo ideias em soluções digitais.<br class="hidden sm:block" />
           Crio aplicações
@@ -52,10 +50,10 @@
           internet.
         </p>
 
-        <!-- CTA -->
+        <!-- CTA Principal -->
         <nav
           aria-label="Ações principais"
-          class="mt-8 flex justify-center lg:justify-start gap-4 relative flex-wrap"
+          class="buttons mt-8 flex justify-center lg:justify-start gap-4 relative flex-wrap"
         >
           <a
             href="#contato"
@@ -64,12 +62,57 @@
             <IconsComp name="Contact" aria-hidden="true" />
             <span>Entre em Contato</span>
           </a>
+
+          <a
+            href="/curriculo.pdf"
+            target="_blank"
+            class="inline-flex gap-2 items-center justify-center rounded-lg border border-white/20 px-6 py-3 text-sm sm:text-base font-semibold text-white hover:border-blue-500 hover:text-blue-400 focus:outline-none focus:ring-4 focus:ring-blue-400 focus:ring-opacity-50 transition opacity-50 cursor-not-allowed pointer-events-none"
+            aria-disabled="true"
+          >
+            <IconsComp name="Download" aria-hidden="true" />
+            <span>Baixar CV</span>
+          </a>
         </nav>
+
+        <!-- Social Links -->
+        <div class="social-links mt-6 flex justify-center lg:justify-start gap-6">
+          <a
+            href="https://github.com/seuusuario"
+            target="_blank"
+            aria-label="GitHub"
+            class="hover:text-blue-400 text-blue-300 transition"
+          >
+            <IconsComp name="GitHub" class="w-6 h-6" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/antonio-marcos-9305bb2b4/"
+            target="_blank"
+            aria-label="LinkedIn"
+            class="hover:text-blue-400 text-blue-300 transition"
+          >
+            <IconsComp name="Linkedin" class="w-6 h-6" />
+          </a>
+          <a
+            href="mailto:marcosmacedo784@gmail.com"
+            aria-label="Email"
+            class="hover:text-blue-400 text-blue-300 transition"
+          >
+            <IconsComp name="Mail" class="w-6 h-6" />
+          </a>
+          <a
+            href="https://github.com/marcos-macedo-dev"
+            target="_blank"
+            aria-label="GitHub"
+            class="hover:text-blue-400 text-blue-300 transition"
+          >
+            <IconsComp name="Github" class="w-6 h-6" />
+          </a>
+        </div>
       </header>
 
       <!-- Avatar -->
       <figure
-        class="flex-1 relative max-w-[320px] sm:max-w-[400px] md:max-w-[480px] lg:max-w-[520px] w-full"
+        class="avatar flex-1 relative max-w-[320px] sm:max-w-[400px] md:max-w-[480px] lg:max-w-[520px] w-full"
       >
         <div
           class="relative w-full h-[320px] sm:h-[420px] md:h-[440px] lg:h-[620px] rounded-3xl overflow-hidden border border-blue-700 bg-blue-900/70 backdrop-blur-xl shadow-[0_0_80px_#2563eb]/20 transition hover:shadow-[0_0_120px_#2563eb]/30 transform-3d"
@@ -84,7 +127,6 @@
           />
         </div>
 
-        <!-- Ícone decorativo -->
         <img
           src="../assets/images/puzzle.png"
           alt=""
@@ -101,12 +143,64 @@
 
 <script setup>
 import { onMounted } from 'vue'
+import IconsComp from '../components/IconsComp.vue'
+import { gsap } from 'gsap'
 /* global particlesJS */
 
 onMounted(() => {
   particlesJS.load('particles-js', 'particles.json', function () {
     console.log('Particles.js config loaded')
   })
+
+  // Animações GSAP
+  const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
+
+  tl.from('.title', {
+    y: -50,
+    opacity: 0,
+    duration: 1,
+  })
+
+  tl.from(
+    '.subtitle',
+    {
+      y: -20,
+      opacity: 0,
+      duration: 0.8,
+    },
+    '-=0.6'
+  )
+
+  tl.from(
+    '.buttons',
+    {
+      y: 20,
+      opacity: 0,
+      duration: 0.8,
+    },
+    '-=0.6'
+  )
+
+  tl.from(
+    '.social-links a',
+    {
+      y: 20,
+      opacity: 0,
+      duration: 0.5,
+      stagger: 0.1,
+    },
+    '-=0.5'
+  )
+
+  tl.from(
+    '.avatar',
+    {
+      scale: 0.8,
+      opacity: 0,
+      duration: 1.2,
+    },
+    '-=1'
+  )
 })
 </script>
 

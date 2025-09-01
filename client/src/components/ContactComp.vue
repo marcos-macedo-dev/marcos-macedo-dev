@@ -1,7 +1,11 @@
 <script setup>
 import axios from 'axios'
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useAlert } from '@/stores/useAlert'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 
 const alert = useAlert()
 
@@ -37,11 +41,55 @@ const handleSubmit = async () => {
     isLoading.value = false
   }
 }
+
+const section = ref(null)
+
+onMounted(() => {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: section.value,
+      start: 'top center',
+      end: 'bottom center',
+      toggleActions: 'play none none reverse',
+    },
+  })
+
+  tl.from('.contact-title', {
+    y: -50,
+    opacity: 0,
+    duration: 1,
+    ease: 'power3.out',
+  })
+
+  tl.from(
+    '.contact-subtitle',
+    {
+      y: -20,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power3.out',
+    },
+    '-=0.6'
+  )
+
+  tl.from(
+    '.form-item',
+    {
+      y: 20,
+      opacity: 0,
+      duration: 0.5,
+      stagger: 0.1,
+      ease: 'power3.out',
+    },
+    '-=0.5'
+  )
+})
 </script>
 
 <template>
   <section
     id="contato"
+    ref="section"
     class="relative isolate bg-gradient-to-bl from-zinc-900 via-zinc-950 to-black py-24 px-6"
   >
     <!-- Glows -->
@@ -58,11 +106,15 @@ const handleSubmit = async () => {
     <div class="max-w-3xl mx-auto">
       <!-- Cabeçalho -->
       <div class="mb-12 text-center">
-        <h3 class="text-sm uppercase tracking-widest text-blue-500 mb-2">Contato</h3>
-        <h2 class="text-4xl sm:text-5xl font-extrabold text-white mb-4 tracking-tight">
+        <h3 class="contact-subtitle text-sm uppercase tracking-widest text-blue-500 mb-2">
+          Contato
+        </h3>
+        <h2
+          class="contact-title text-4xl sm:text-5xl font-extrabold text-white mb-4 tracking-tight"
+        >
           Fale Comigo
         </h2>
-        <p class="max-w-xl mx-auto text-base text-gray-400 leading-relaxed">
+        <p class="contact-subtitle max-w-xl mx-auto text-base text-gray-400 leading-relaxed">
           Tem dúvidas, sugestões ou deseja um orçamento? Envie uma mensagem e retornarei
           rapidamente.
         </p>
@@ -72,7 +124,7 @@ const handleSubmit = async () => {
       <form class="grid gap-6" @submit.prevent="handleSubmit">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <!-- Nome -->
-          <div>
+          <div class="form-item">
             <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Nome</label>
             <input
               type="text"
@@ -85,7 +137,7 @@ const handleSubmit = async () => {
           </div>
 
           <!-- Email -->
-          <div>
+          <div class="form-item">
             <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
             <input
               type="email"
@@ -99,7 +151,7 @@ const handleSubmit = async () => {
         </div>
 
         <!-- Mensagem -->
-        <div>
+        <div class="form-item">
           <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Mensagem</label>
           <textarea
             id="message"
@@ -112,7 +164,7 @@ const handleSubmit = async () => {
         </div>
 
         <!-- Botão -->
-        <div class="flex justify-center">
+        <div class="form-item flex justify-center">
           <button
             type="submit"
             disabled

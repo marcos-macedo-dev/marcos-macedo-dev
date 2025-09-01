@@ -1,5 +1,9 @@
 <template>
-  <section id="competencias" class="relative isolate bg-zinc-950 py-24 px-6 overflow-hidden">
+  <section
+    id="competencias"
+    ref="section"
+    class="relative isolate bg-zinc-950 py-24 px-6 overflow-hidden"
+  >
     <!-- Glows decorativos -->
     <div
       class="absolute -top-40 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-blue-600/20 blur-[160px] pointer-events-none"
@@ -13,11 +17,11 @@
 
     <div class="z-10 max-w-7xl mx-auto w-full flex flex-col gap-10 sm:gap-12">
       <!-- Título -->
-      <header class="text-center max-w-3xl mx-auto">
+      <header class="skills-title text-center max-w-3xl mx-auto">
         <h2 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
           Minhas Competências
         </h2>
-        <p class="text-blue-300 text-base sm:text-lg leading-relaxed">
+        <p class="skills-subtitle text-blue-300 text-base sm:text-lg leading-relaxed">
           Combinando habilidades técnicas e ferramentas modernas para construir aplicações robustas,
           eficientes e escaláveis.
         </p>
@@ -27,7 +31,7 @@
       <div class="flex flex-col lg:flex-row gap-12 lg:gap-20">
         <!-- Skills -->
         <section
-          class="flex-1 bg-zinc-900/70 rounded-2xl p-8 backdrop-blur-md border border-blue-700/30 shadow-md hover:shadow-lg transition-shadow duration-300"
+          class="skills-section flex-1 bg-zinc-900/70 rounded-2xl p-8 backdrop-blur-md border border-blue-700/30 shadow-md hover:shadow-lg transition-shadow duration-300"
         >
           <h3 class="text-3xl font-semibold text-white mb-8 text-center tracking-wide">Skills</h3>
           <ul class="grid grid-cols-2 sm:grid-cols-3 gap-6 text-blue-300 text-base font-medium">
@@ -35,7 +39,7 @@
               v-for="(skill, index) in skills"
               :key="skill.name"
               :class="[
-                'flex items-center gap-4 p-3 rounded-md bg-zinc-800 hover:bg-blue-700/50 transition-transform duration-300 select-none cursor-default',
+                'skill-item flex items-center gap-4 p-3 rounded-md bg-zinc-800 hover:bg-blue-700/50 transition-transform duration-300 select-none cursor-default',
                 index % 3 === 1 ? 'hover:-rotate-3' : 'hover:rotate-3',
               ]"
               :title="skill.name"
@@ -55,7 +59,7 @@
 
         <!-- Ferramentas -->
         <section
-          class="flex-1 bg-zinc-900/70 rounded-2xl p-8 backdrop-blur-md border border-blue-700/30 shadow-md hover:shadow-lg transition-shadow duration-300"
+          class="tools-section flex-1 bg-zinc-900/70 rounded-2xl p-8 backdrop-blur-md border border-blue-700/30 shadow-md hover:shadow-lg transition-shadow duration-300"
         >
           <h3 class="text-3xl font-semibold text-white mb-8 text-center tracking-wide">
             Ferramentas
@@ -65,7 +69,7 @@
               v-for="(tool, index) in tools"
               :key="tool.name"
               :class="[
-                'flex items-center gap-4 p-3 rounded-md bg-zinc-800 hover:bg-blue-700/50 transition-transform duration-300 select-none cursor-default',
+                'tool-item flex items-center gap-4 p-3 rounded-md bg-zinc-800 hover:bg-blue-700/50 transition-transform duration-300 select-none cursor-default',
                 index % 3 === 1 ? 'hover:-rotate-4' : 'hover:rotate-4',
               ]"
               :title="tool.name"
@@ -85,7 +89,14 @@
 </template>
 
 <script setup>
+import { onMounted, ref } from 'vue'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { Icon } from '@iconify/vue'
+
+gsap.registerPlugin(ScrollTrigger)
+
+const section = ref(null)
 
 const skills = [
   { name: 'Vue.js', icon: 'simple-icons:vuedotjs' },
@@ -110,4 +121,57 @@ const tools = [
   { name: 'Netlify', icon: 'simple-icons:netlify' },
   { name: 'Insomnia', icon: 'simple-icons:insomnia' },
 ]
+
+onMounted(() => {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: section.value,
+      start: 'top center',
+      end: 'bottom center',
+      toggleActions: 'play none none reverse',
+    },
+  })
+
+  tl.from('.skills-title', {
+    y: -50,
+    opacity: 0,
+    duration: 1,
+    ease: 'power3.out',
+  })
+
+  tl.from(
+    '.skills-subtitle',
+    {
+      y: -20,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power3.out',
+    },
+    '-=0.6'
+  )
+
+  tl.from(
+    '.skill-item',
+    {
+      y: 20,
+      opacity: 0,
+      duration: 0.5,
+      stagger: 0.1,
+      ease: 'power3.out',
+    },
+    '-=0.5'
+  )
+
+  tl.from(
+    '.tool-item',
+    {
+      y: 20,
+      opacity: 0,
+      duration: 0.5,
+      stagger: 0.1,
+      ease: 'power3.out',
+    },
+    '-=0.5'
+  )
+})
 </script>
