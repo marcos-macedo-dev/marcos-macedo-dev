@@ -7,10 +7,10 @@ import IconsComp from '@/components/IconsComp.vue'
 const alert = useAlert()
 
 const information = computed(() => {
-  if (alert.status >= 500) return ['XCircle', 'red', 'white']
-  if (alert.status >= 300) return ['AlertCircle', 'yellow', 'black']
-  if (alert.status >= 200) return ['CheckCircle', 'green', 'white']
-  return ['Info', 'blue', 'white']
+  if (alert.status >= 500) return ['XCircle', '#ff5252'] // Red
+  if (alert.status >= 300) return ['AlertCircle', '#ffc107'] // Yellow
+  if (alert.status >= 200) return ['CheckCircle', '#2ed573'] // Green
+  return ['Info', '#2979ff'] // Blue
 })
 
 const isVisible = ref(false)
@@ -38,10 +38,9 @@ onBeforeUnmount(() => {
 <template>
   <transition name="fade-slide">
     <div v-if="isVisible" class="toast-container">
-      <div class="toast-content" :style="{ background: information[1] }">
-        <!-- Usando o componente IconsComp para exibir o ícone dinâmico -->
-        <IconsComp :name="information[0]" :color="information[2]" class="icon" />
-        <span class="message" :style="{ color: information[2] }">{{ alert.message }}</span>
+      <div class="toast-content">
+        <IconsComp :name="information[0]" :style="{ color: information[1] }" class="icon" />
+        <span class="message" style="color: white;">{{ alert.message }}</span>
       </div>
     </div>
   </transition>
@@ -50,7 +49,7 @@ onBeforeUnmount(() => {
 <style scoped>
 .toast-container {
   position: fixed;
-  top: 20px;
+  top: 40px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
@@ -58,38 +57,37 @@ onBeforeUnmount(() => {
   max-width: 90%;
 }
 
-/* Estilo do Toast */
 .toast-content {
   display: flex;
   align-items: center;
-  gap: 8px;
-  color: white;
-  font-size: 14px;
-  padding: 12px 18px;
-  border-radius: 8px;
-  width: 100%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  font-weight: 500;
-  transition: opacity 0.3s ease-in-out;
+  gap: 12px;
+  font-size: 16px;
+  padding: 16px 24px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  font-weight: 600;
+  
+  /* Glassmorphism */
+  background: rgba(30, 30, 45, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Ícone */
 .icon {
-  font-size: 22px;
+  font-size: 24px;
 }
 
-/* Anima o fade */
+/* Animations */
 .fade-slide-enter-active,
 .fade-slide-leave-active {
-  transition:
-    opacity 0.3s,
-    bottom 0.3s ease-in-out;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .fade-slide-enter-from,
 .fade-slide-leave-to {
   opacity: 0;
-  bottom: -100px;
+  transform: translateY(-20px) scale(0.95);
 }
 
 @media screen and (max-width: 548px) {

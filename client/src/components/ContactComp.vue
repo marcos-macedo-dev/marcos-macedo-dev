@@ -24,7 +24,7 @@ const handleSubmit = async () => {
 
   isLoading.value = true
   try {
-    await axios.post('http://localhost:3000/api/contact', {
+    await axios.post('https://marcos-macedo-dev-g9al.vercel.app/api/contact', {
       name: name.value,
       email: email.value,
       message: message.value,
@@ -167,7 +167,7 @@ onMounted(() => {
         <div class="form-item flex justify-center">
           <button
             type="submit"
-            disabled
+            :disabled="isLoading"
             class="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-8 py-3 text-sm sm:text-base font-semibold text-white shadow-md hover:bg-blue-700 hover:shadow-blue-500/40 focus:outline-none focus:ring-4 focus:ring-blue-500/50 transition disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <IconsComp
