@@ -23,6 +23,7 @@
           <li><a href="#inicio" class="hover:text-white transition">Início</a></li>
           <li><a href="#sobre" class="hover:text-white transition">Sobre</a></li>
           <li><a href="#competencias" class="hover:text-white transition">Competências</a></li>
+          <li><a href="#projetos" class="hover:text-white transition">Projetos</a></li>
           <li><a href="#contato" class="hover:text-white transition">Contato</a></li>
         </ul>
       </nav>
@@ -41,7 +42,7 @@
 
     <!-- Linha separadora -->
     <div class="border-t border-zinc-800 mt-8 pt-4 text-center text-xs text-gray-600">
-      © 2025. Todos os direitos reservados.
+      &copy; {{ new Date().getFullYear() }} Antonio Marcos. Todos os direitos reservados.
     </div>
   </footer>
 </template>
