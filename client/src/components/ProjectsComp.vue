@@ -92,7 +92,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { ref, onMounted, onBeforeUnmount, nextTick } from 'vue'
 import { Icon } from '@iconify/vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -258,7 +258,8 @@ const projects = [
 
 let ctx
 
-onMounted(() => {
+onMounted(async () => {
+  await nextTick()
   if (!section.value) return
 
   // gsap.context garante que os seletores sejam resolvidos apenas dentro desta seção
@@ -266,6 +267,7 @@ onMounted(() => {
     const tl = gsap.timeline({
       defaults: {
         immediateRender: false,
+        ease: 'power2.out',
       },
       scrollTrigger: {
         trigger: section.value,
@@ -345,21 +347,10 @@ onMounted(() => {
         },
         '-=0.4',
       )
-
-    // leve efeito de scroll/parallax nos cards
-    gsap.utils.toArray('.project-card').forEach((card, i) => {
-      gsap.to(card, {
-        y: i % 2 === 0 ? -12 : 12,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: card,
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: true,
-        },
-      })
-    })
   }, section.value)
+
+  // recalcula os triggers após montar
+  ScrollTrigger.refresh()
 })
 
 onBeforeUnmount(() => {
