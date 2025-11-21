@@ -12,6 +12,7 @@
       <Sobre />
 
       <Skills />
+      <Projetos />
 
       <!-- Seção de Contato -->
       <Contato />
@@ -28,6 +29,7 @@ import Header from '@/components/HeaderComp.vue'
 import Hero from '@/components/HeroSection.vue'
 import Sobre from '@/components/AboutMeComp.vue'
 import Skills from '@/components/SkillsComp.vue'
+import Projetos from '@/components/ProjectsComp.vue'
 import Contato from '@/components/ContactComp.vue'
 import Footer from '@/components/FooterComp.vue'
 </script>

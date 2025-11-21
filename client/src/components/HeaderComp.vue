@@ -62,6 +62,7 @@ const links = [
   { label: 'Início', href: '#inicio' },
   { label: 'Sobre', href: '#sobre' },
   { label: 'Competências', href: '#competencias' },
+  { label: 'Projetos', href: '#projetos' },
   { label: 'Contato', href: '#contato' },
 ]
 
