@@ -1,6 +1,5 @@
 import { Reveal } from "@/components/portfolio/reveal";
-import { ProfilePhoto } from "@/components/portfolio/profile-photo";
-import { ArrowUpRight, Github, Linkedin } from "lucide-react";
+import { ArrowUpRight, BriefcaseBusiness, Code2 } from "lucide-react";
 
 type HeroProps = {
   name: string;
@@ -9,7 +8,6 @@ type HeroProps = {
   headline: string;
   github: string;
   linkedin: string;
-  profileImage?: string;
 };
 
 export function Hero({
@@ -19,15 +17,7 @@ export function Hero({
   headline,
   github,
   linkedin,
-  profileImage,
 }: HeroProps) {
-  const initials = name
-    .split(" ")
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((part) => part[0]?.toUpperCase())
-    .join("");
-
   return (
     <section id="inicio" className="section page-shell grid gap-8 pt-20 md:grid-cols-[1.25fr_0.75fr]">
       <Reveal className="space-y-6">
@@ -54,7 +44,7 @@ export function Hero({
             rel="noreferrer"
             className="btn-secondary inline-flex items-center gap-2 rounded-md px-5 py-2 text-sm font-semibold transition-colors"
           >
-            <Github size={15} className="icon-shift" />
+            <Code2 size={15} className="icon-shift" />
             GitHub
           </a>
           <a
@@ -63,7 +53,7 @@ export function Hero({
             rel="noreferrer"
             className="btn-secondary inline-flex items-center gap-2 rounded-md px-5 py-2 text-sm font-semibold transition-colors"
           >
-            <Linkedin size={15} className="icon-shift" />
+            <BriefcaseBusiness size={15} className="icon-shift" />
             LinkedIn
           </a>
         </div>
@@ -72,12 +62,7 @@ export function Hero({
       <Reveal delayMs={120}>
         <div className="panel relative overflow-hidden p-7">
           <div className="absolute top-0 left-0 h-1 w-full bg-[var(--foreground)]" />
-          <div className="mb-6 flex items-center gap-4">
-            <ProfilePhoto name={name} profileImage={profileImage} initials={initials} />
-            <p className="font-mono text-xs uppercase tracking-[0.14em] text-[var(--muted)]">
-              Identidade visual
-            </p>
-          </div>
+
           <p className="mb-5 font-mono text-xs font-medium uppercase tracking-[0.14em] text-[var(--muted)]">
             Foco atual
           </p>

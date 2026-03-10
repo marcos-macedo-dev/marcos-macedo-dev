@@ -1,6 +1,6 @@
 import type { Project } from "@/data/portfolio";
 import { Reveal } from "@/components/portfolio/reveal";
-import { ExternalLink, Github } from "lucide-react";
+import { Code2, ExternalLink } from "lucide-react";
 
 type ProjectsProps = {
   projects: Project[];
@@ -51,7 +51,7 @@ export function Projects({ projects }: ProjectsProps) {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <Github size={14} className="icon-shift" />
+                  <Code2 size={14} className="icon-shift" />
                   Repositorio
                 </a>
               </div>

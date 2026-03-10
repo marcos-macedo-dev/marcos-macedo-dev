@@ -20,7 +20,6 @@ export default function Home() {
           headline={portfolioData.headline}
           github={portfolioData.social.github}
           linkedin={portfolioData.social.linkedin}
-          profileImage={portfolioData.profileImage}
         />
         <About copy={portfolioData.about} />
         <Stack items={portfolioData.stacks} />
