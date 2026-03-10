@@ -1,48 +1,39 @@
-<h1 align="center">👋 Olá, eu sou o Marcos!</h1>
+# Marcos Macedo
 
-<p>
-🎓 Estudante apaixonado por tecnologia e em constante evolução na área de <strong>desenvolvimento de software</strong>.  
-💻 Focado em <strong>desenvolvimento web</strong> e <strong>mobile</strong>, utilizando tecnologias modernas como <strong>Vue.js</strong>, <strong>React Native</strong> e <strong>TailwindCSS</strong>.  
-🔧 Também possuo experiência com <strong>manutenção de computadores</strong> e suporte técnico em ambientes institucionais.
-</p>
+Desenvolvedor em formação, com foco em criar produtos web e mobile que sejam simples de usar, fáceis de manter e eficientes em produção.
 
----
+Atualmente, concentro meus estudos e projetos em frontend moderno, integração com APIs e boas práticas de estrutura de código.
 
-## 🛠️ Tecnologias e Ferramentas
+## Sobre
 
-- 💡 **Linguagens:** JavaScript | HTML | CSS  
-- 🌐 **Frameworks/Libraries:** Vue.js | React Native | TailwindCSS  
-- 🧰 **Ferramentas:** Git | GitHub | VS Code  
-- 📚 **Cursos:**  
-  - 🎓 Huawei HCIA-5G V2.0 – Fundamentos de redes móveis e tecnologia 5G  
-  - 🎓 Google Data Analytics (PT) – Introdução à análise de dados e ferramentas como planilhas e SQL  
+- Experiência com desenvolvimento web usando Vue.js e Tailwind CSS.
+- Vivência com mobile usando React Native.
+- Base técnica em suporte e infraestrutura, com atuação prática em manutenção e ambiente institucional.
+- Perfil orientado a melhoria contínua, consistência de entrega e evolução técnica.
 
----
+## Stack
 
-## 🚀 Projetos
+- Linguagens: JavaScript, HTML, CSS
+- Frontend: Vue.js, Tailwind CSS
+- Mobile: React Native
+- Ferramentas: Git, GitHub, VS Code
 
-> *Alguns dos meus projetos em destaque:*
+## Projeto em destaque
 
-- 🔗 [**Portfólio Pessoal**](https://marcos-macedo-dev.vercel.app/) – Criado com Vue.js e TailwindCSS, exibindo meus projetos e habilidades  
+- [Portfolio Pessoal](https://marcos-macedo-dev.vercel.app/)  
+  Projeto construído para apresentar minha trajetória, habilidades e trabalhos publicados.
 
-*(Mais projetos em breve!)*
+## Formação complementar
 
----
+- Huawei HCIA-5G V2.0
+- Google Data Analytics (PT)
 
-## 📫 Entre em Contato
+## Contato
 
-- 📧 **E-mail:** marcosmacedo784@gmail.com  
-- 💼 **LinkedIn:** [linkedin.com/in/antonio-marcos-9305bb2b4](https://www.linkedin.com/in/antonio-marcos-9305bb2b4)  
-- 🧑‍💻 **GitHub:** [github.com/marcos-macedo-dev](https://github.com/marcos-macedo-dev)
-
----
-
-## ⚡ Curiosidades
-
-- 📍 Estágio em TI em escola pública, com foco em desenvolvimento e suporte técnico  
-- 🚀 Motivado por novos desafios e pelo aprendizado contínuo  
-- 🤖 Interesses em desenvolvimento de softwares, redes, automação e inovação com IA
+- E-mail: [marcosmacedo784@gmail.com](mailto:marcosmacedo784@gmail.com)
+- LinkedIn: [linkedin.com/in/antonio-marcos-9305bb2b4](https://www.linkedin.com/in/antonio-marcos-9305bb2b4)
+- GitHub: [github.com/marcos-macedo-dev](https://github.com/marcos-macedo-dev)
 
 ---
 
-<p align="center"><strong>⭐ Obrigado por visitar meu perfil!</strong></p>
+Se quiser trocar uma ideia sobre projetos, colaboração ou oportunidades, estou à disposição.
